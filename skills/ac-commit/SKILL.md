@@ -123,7 +123,7 @@ disable-model-invocation: true
 `[模式：上下文归档]`
 
 **前置判断**：
-- 若 `.context/` 目录不存在 → 在提交成功后输出提示：`💡 当前仓库尚未启用 .context 决策追踪，可按团队约定初始化后再使用自动归档`，不阻断
+- 若 `.context/` 目录不存在 → 自动创建 `.context/history/`、`.context/current/branches/` 目录结构，初始化空的 `commits.jsonl` 和 `commits.md`，然后继续执行归档
 - 若 `.context/` 存在 → 执行以下步骤
 
 **从 git diff 自动生成 ContextEntry**：
